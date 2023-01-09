@@ -30,5 +30,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
+        build-args: |
+          QODANA_VERSION=${{steps.tag.outputs.version}}
         tags: |
           ghcr.io/charted-dev/qodana-jvm-node:${{steps.tag.outputs.version}}
